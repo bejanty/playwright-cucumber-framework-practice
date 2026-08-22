@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "commonjs",
+        "strict": true,
+        "esModuleInterop": true,
+        "types": ["node"]
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        //"node_modules"
+    ]
+}
