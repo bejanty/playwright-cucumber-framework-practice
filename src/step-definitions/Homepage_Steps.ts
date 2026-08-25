@@ -16,9 +16,8 @@ When('I click on the Contact Us Page', async () => {
 
 When('I click on the Login Portal button', async () => {
     const login_Button = await pageFixture.page.getByRole('link', { name: 'LOGIN PORTAL Login Portal' });
-    login_Button.click();
-    //await pageFixture.page.pause();
-
+    //pageFixture.newPagePromise = pageFixture.context.waitForEvent('page');
+    await login_Button.click();
 });
 
 

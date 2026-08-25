@@ -4,6 +4,10 @@ import { expect } from "@playwright/test";
 
 let alertText: string;
 
+Given('I navigate to the webdriveruniversity login page', async () => {
+    await pageFixture.page.goto("https://www.webdriveruniversity.com/Login-Portal/index.html");
+});
+
 When('I type a username {word}', async (username: string) => {
     await pageFixture.page.getByPlaceholder('Username').fill(username);
 

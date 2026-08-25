@@ -1,5 +1,5 @@
 import { After, AfterAll, Before, BeforeAll, Status } from "@cucumber/cucumber";
-import { Browser, BrowserType, chromium, firefox, webkit } from "playwright";
+import { Browser, BrowserType, chromium, firefox, webkit } from "@playwright/test";
 import { pageFixture } from "./browserContextFixture";
 
 //Load env variables from .env file
@@ -55,7 +55,7 @@ AfterAll(async function () {
 Before(async function() {
     try{
         browserInstance = await initializeBrowserContext(config.browser);
-        console.log(`Broswer context initialised for: ${config.browser}`);
+        console.log(`Broswer context initialized for: ${config.browser}`);
         // pageFixture.context = await browser.newContext({ viewport: { width: 1920, height: 1080 }});
         // pageFixture.page = await pageFixture.context.newPage();
         await initializePage();
