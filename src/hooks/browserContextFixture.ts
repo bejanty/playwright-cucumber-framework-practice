@@ -7,4 +7,6 @@ export const pageFixture = {
     // @ts-ignore
     context: undefined as BrowserContext,
 
+    newPagePromise: undefined as Promise<Page> | undefined,
+
 }

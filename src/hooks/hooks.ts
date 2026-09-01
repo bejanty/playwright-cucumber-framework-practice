@@ -1,6 +1,8 @@
 import { After, AfterAll, Before, BeforeAll, Status } from "@cucumber/cucumber";
 import { Browser, BrowserType, chromium, firefox, webkit } from "@playwright/test";
 import { pageFixture } from "./browserContextFixture";
+import { setGlobalSettings } from "../utils/playwright-timeout";
+import { PageManager } from "../page-objects/base/PageManager";
 
 //Load env variables from .env file
 import {config as loadEnv} from "dotenv";
@@ -41,6 +43,7 @@ async function initializePage(): Promise<void> {
 
     });
     pageFixture.page = await pageFixture.context.newPage();
+    setGlobalSettings(pageFixture.page);
     await pageFixture.page.setViewportSize({width: config.width, height: config.height});
 }
 
@@ -59,6 +62,9 @@ Before(async function() {
         // pageFixture.context = await browser.newContext({ viewport: { width: 1920, height: 1080 }});
         // pageFixture.page = await pageFixture.context.newPage();
         await initializePage();
+
+        this.pageManager = new PageManager();
+        this.basePage = this.pageManager.createBasePage();
     } catch (error) {
         console.error('Browser context initialisation failed: ', error);
     }
