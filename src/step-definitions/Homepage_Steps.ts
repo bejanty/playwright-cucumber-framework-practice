@@ -22,7 +22,7 @@ When('I click on the Contact Us Page', async function (this:CucumberWorld) {
     // const contactUs_Button = await pageFixture.page.getByRole('link', { name: 'CONTACT US Contact Us Form' });
     // pageFixture.newPagePromise = pageFixture.context.waitForEvent('page');
     // await contactUs_Button.click();
-    this.basePage.waitAndClickByRole('link', 'Contact Us Form');
+    this.homePage.clickOnContactUsButton();
 
 });
 
@@ -30,7 +30,7 @@ When('I click on the Login Portal button', async function (this:CucumberWorld) {
     // const login_Button = await pageFixture.page.getByRole('link', { name: 'LOGIN PORTAL Login Portal' });
     // pageFixture.newPagePromise = pageFixture.context.waitForEvent('page');
     // await login_Button.click();
-    this.basePage.waitAndClickByRole('link', 'Login Portal');
+    this.homePage.clickOnLoginPortalButton();
 
 });
 

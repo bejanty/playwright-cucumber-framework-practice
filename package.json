@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cucumberWithTS": "cucumber-js src/features/*.feature --require-module ts-node/register --require src/hooks/**/*.ts --require src/step-definitions/**/**/*.ts --require src/utils/cucumber-timeout.ts",
-    "cucumber": "npx cucumber-js && ts-node ./src/index.ts",
+    "cucumber": "ts-node ./src/index.ts",
     "precucumber": "rimraf reports && mkdir reports"
   },
   "keywords": [],

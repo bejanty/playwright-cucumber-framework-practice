@@ -2,7 +2,7 @@ import { Page } from "@playwright/test";
 
 //Load env vaiables from .env file
 import {config as loadEnv } from "dotenv";
-const env = loadEnv({path: './env/.env'});
+const env = loadEnv({path: './env/.env', quiet: true});
 
 export function setGlobalSettings(page: Page) {
     const navigationTimeout = parseInt(env.parsed?.UI_AUTOMATION_NAVIGATION_TIMEOUT || '50000');

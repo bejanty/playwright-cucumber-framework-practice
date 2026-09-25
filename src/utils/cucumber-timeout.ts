@@ -2,7 +2,7 @@ import { setDefaultTimeout } from "@cucumber/cucumber";
 
 //Load env vaiables from .env file
 import {config as loadEnv } from "dotenv";
-const env = loadEnv({path: './env/.env'});
+const env = loadEnv({path: './env/.env', quiet: true});
 
 const customTimeout = parseInt(env.parsed?.CUCUMBER_CUSTOM_TIMEOUT || '60000'); //60 seconds
 

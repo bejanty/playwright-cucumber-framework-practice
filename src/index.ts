@@ -1,6 +1,6 @@
 import { exec } from "child_process";
 import dotenv from 'dotenv';
-dotenv.config({ path: './env/.env'});
+dotenv.config({ path: './env/.env', quiet: true });
 
 //Setting retry value from environment variables or defaulting to '0'
 const parallelValue = process.env.PARALLEL || '1';
@@ -30,7 +30,7 @@ const profiles: ProfileCommands = {
     smoke: `${common} --tags "@smoke"`,
     regression: `${common} --tags "@regression"`,
     login: `${common} --tags "@login"`,
-    contactUS: `${common} --tags "@contact-us"`,
+    contactUs: `${common} --tags "@contact-us"`,
 }
 
 // Get the third command-line argument and assign it to the profile
